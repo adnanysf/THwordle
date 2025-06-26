@@ -12,6 +12,7 @@ export default function Home() {
   const [gameWon, setGameWon] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [targetDirector, setTargetDirector] = useState(null);
+  const [showResultsPopup, setShowResultsPopup] = useState(false);
   
   const directors = directorsData.directors;
   
@@ -98,6 +99,43 @@ export default function Home() {
     return isCorrect ? "bg-green-500" : "bg-red-500";
   };
 
+  const generateEmojiResults = () => {
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en-US');
+    
+    let resultText = `THWordle ${dateString}\n\n`;
+    
+    pastGuesses.forEach((guess, index) => {
+      const isWinningGuess = guess.name && guess.gradDate && guess.flag;
+      
+      // Generate emojis for each attribute
+      const nameEmoji = isWinningGuess ? "🩷" : (guess.name ? "🟢" : "🔴");
+      const gradEmoji = isWinningGuess ? "🔵" : (guess.gradDate ? "🟢" : "🔴");
+      const flagEmoji = isWinningGuess ? "🩷" : (guess.flag ? "🟢" : "🔴");
+      
+      resultText += `${nameEmoji}${gradEmoji}${flagEmoji}\n`;
+    });
+    
+    if (gameWon) {
+      resultText += `\n🎉 Won in ${pastGuesses.length}/5 tries!`;
+    } else if (gameOver) {
+      resultText += `\n😅 Failed in 5 tries`;
+    }
+    
+    return resultText;
+  };
+
+  const copyResults = async () => {
+    try {
+      const results = generateEmojiResults();
+      await navigator.clipboard.writeText(results);
+      alert("Results copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+      alert("Failed to copy results. Please try again.");
+    }
+  };
+
   const getFlagEmoji = (flagName) => {
     return flagEmojis[flagName] || flagName;
   };
@@ -122,7 +160,7 @@ export default function Home() {
    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
     <div className="mb-6 text-center">
       <h1 className="text-4xl font-bold text-gray-800 mb-2">TH Wordle</h1>
-      <p className="text-gray-600">Guess the TH Director, u have 5 tries.</p>
+      <p className="text-gray-600">guess the TH Director, u have 5 tries.</p>
       {gameOver && (
         <div className="mt-4 p-4 rounded-lg bg-gray-800 text-white">
           {gameWon ? (
@@ -132,6 +170,12 @@ export default function Home() {
                that was embarassing, the director was: {targetDirector?.name}
             </p>
           )}
+          <button
+            onClick={() => setShowResultsPopup(true)}
+            className="mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-semibold"
+          >
+            Share Results 📋
+          </button>
         </div>
       )}
     </div>
@@ -158,7 +202,6 @@ export default function Home() {
                 onMouseDown={() => handleSuggestionClick(director.name)}
               >
                 <span className="font-medium">{director.name}</span>
-                <span className="text-sm text-gray-500 ml-2">({director.grad_date})</span>
               </div>
             ))}
           </div>
@@ -178,7 +221,7 @@ export default function Home() {
           <h2 className="text-xl font-bold text-center mb-4 text-black">Your Guesses</h2>
 
           {pastGuesses.length === 0 ? (
-            <p className="text-center text-gray-500">No guesses yet. Start guessing!</p>
+            <p className="text-center text-gray-500">no guesses, start guessing</p>
           ) : (
             <div className="space-y-4">
               {pastGuesses.map((guess, index) => {
@@ -207,6 +250,32 @@ export default function Home() {
         </div>
     </div>
 
+    {showResultsPopup && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+          <h3 className="text-xl font-bold text-gray-800 mb-4 text-center padding-6">Share Results!</h3>
+          
+          <div className="bg-gray-100 p-4 rounded border text-sm font-mono text-gray-800 whitespace-pre-line mb-4">
+            {generateEmojiResults()}
+          </div>
+          
+          <div className="flex gap-3">
+            <button
+              onClick={copyResults}
+              className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-semibold"
+            >
+              Copy to Clipboard
+            </button>
+            <button
+              onClick={() => setShowResultsPopup(false)}
+              className="flex-1 px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded font-semibold"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
 
    </div>
   );
