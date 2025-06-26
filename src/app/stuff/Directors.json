@@ -1,0 +1,199 @@
+{
+  "directors": [
+    {
+      "name": "Li",
+      "grad_date": "2025",
+      "flag": "China"
+    },
+    {
+      "name": "Gabrielle",
+      "grad_date": "2025",
+      "flag": "Philippines"
+    },
+    {
+      "name": "Adnan",
+      "grad_date": "2025",
+      "flag": "Bangladesh"
+    },
+    {
+      "name": "Adam",
+      "grad_date": "2026",
+      "flag": "Netherlands"
+    },
+    {
+      "name": "AJ",
+      "grad_date": "2026",
+      "flag": "Nigeria"
+    },
+    {
+      "name": "Anish",
+      "grad_date": "2025",
+      "flag": "India"
+    },
+    {
+      "name": "Annie",
+      "grad_date": "2027",
+      "flag": "China"
+    },
+    {
+      "name": "Ashlee",
+      "grad_date": "2028",
+      "flag": "Nigeria"
+    },
+    {
+      "name": "Ashrita",
+      "grad_date": "2025",
+      "flag": "India"
+    },
+    {
+      "name": "Austin",
+      "grad_date": "2025",
+      "flag": "India"
+    },
+    {
+      "name": "Blessing",
+      "grad_date": "2028",
+      "flag": "Nigeria"
+    },
+    {
+      "name": "Claire",
+      "grad_date": "2026",
+      "flag": "China"
+    },
+    {
+      "name": "Eric",
+      "grad_date": "2027",
+      "flag": "China"
+    },
+    {
+      "name": "Harsh",
+      "grad_date": "2026",
+      "flag": "India"
+    },
+    {
+      "name": "JoshJohn",
+      "grad_date": "2025",
+      "flag": "India"
+    },
+    {
+      "name": "Justin",
+      "grad_date": "2028",
+      "flag": "China"
+    },
+    {
+      "name": "Kat",
+      "grad_date": "2025",
+      "flag": "Vietnam"
+    },
+    {
+      "name": "Keshav",
+      "grad_date": "2026",
+      "flag": "Sri Lanka"
+    },
+    {
+      "name": "Lizzy",
+      "grad_date": "2025",
+      "flag": "Korea"
+    },
+    {
+      "name": "Monish",
+      "grad_date": "2027",
+      "flag": "India"
+    },
+    {
+      "name": "Nafi",
+      "grad_date": "2025",
+      "flag": "Bangladesh"
+    },
+    {
+      "name": "Naveen",
+      "grad_date": "2025",
+      "flag": "India"
+    },
+    {
+      "name": "Nicolas",
+      "grad_date": "2026",
+      "flag": "Mexico"
+    },
+    {
+      "name": "Nikki",
+      "grad_date": "2027",
+      "flag": "India"
+    },
+    {
+      "name": "Nmesoma",
+      "grad_date": "2027",
+      "flag": "Nigeria"
+    },
+    {
+      "name": "Rita",
+      "grad_date": "2026",
+      "flag": "Mexico"
+    },
+    {
+      "name": "Sandeep",
+      "grad_date": "2027",
+      "flag": "India"
+    },
+    {
+      "name": "Abhishek",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Anjali",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Arya",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Ayo",
+      "grad_date": "2024",
+      "flag": "Nigeria"
+    },
+    {
+      "name": "Ekdev",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Big Harsh",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Jaden",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Jiyoon",
+      "grad_date": "2024",
+      "flag": "Korea"
+    },
+    {
+      "name": "Keegan",
+      "grad_date": "2024",
+      "flag": "USA"
+    },
+    {
+      "name": "Kirthi",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Malavi",
+      "grad_date": "2024",
+      "flag": "India"
+    },
+    {
+      "name": "Mateo",
+      "grad_date": "2024",
+      "flag": "Spain"
+    }
+  ]
+}
