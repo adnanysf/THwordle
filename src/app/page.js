@@ -17,13 +17,30 @@ export default function Home() {
   const directors = directorsData.directors;
   
   useEffect(() => {
-    const today = new Date();
-    const dateString = today.toDateString();
-    const seed = dateString.split('').reduce((a, b) => {
+    const now = new Date();
+    
+    const houstonTimeString = now.toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    
+    const datePart = houstonTimeString.split(',')[0];
+    const [month, day, year] = datePart.split('/');
+    
+    const houstonDateString = `${year}-${month}-${day}`;
+    
+    // console.log('Houston date being used for director selection:', houstonDateString);
+    
+    const seed = houstonDateString.split('').reduce((a, b) => {
       a = ((a << 5) - a) + b.charCodeAt(0);
       return a & a;
     }, 0);
     const index = Math.abs(seed) % directors.length;
+    
+    // console.log('Selected director index:', index, 'Director:', directors[index]?.name);
+    
     setTargetDirector(directors[index]);
   }, []);
 
@@ -100,15 +117,22 @@ export default function Home() {
   };
 
   const generateEmojiResults = () => {
-    const today = new Date();
-    const dateString = today.toLocaleDateString('en-US');
+    const now = new Date();
+    const houstonTimeString = now.toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    
+    const datePart = houstonTimeString.split(',')[0]; 
+    const dateString = datePart;
     
     let resultText = `THWordle ${dateString}\n\n`;
     
     pastGuesses.forEach((guess, index) => {
       const isWinningGuess = guess.name && guess.gradDate && guess.flag;
       
-      // Generate emojis for each attribute
       const nameEmoji = isWinningGuess ? "🩷" : (guess.name ? "🟢" : "🔴");
       const gradEmoji = isWinningGuess ? "🔵" : (guess.gradDate ? "🟢" : "🔴");
       const flagEmoji = isWinningGuess ? "🩷" : (guess.flag ? "🟢" : "🔴");
