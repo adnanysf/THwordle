@@ -143,7 +143,7 @@ export default function Home() {
     if (gameWon) {
       resultText += `\n🎉 Won in ${pastGuesses.length}/5 tries! \n https://th-wordle.vercel.app/`;
     } else if (gameOver) {
-      resultText += `\n😅 Failed in 5 tries`;
+      resultText += `\n😅 Failed in 5 tries \n https://th-wordle.vercel.app/`;
     }
     
     return resultText;
