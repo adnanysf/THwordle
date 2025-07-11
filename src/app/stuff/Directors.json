@@ -194,6 +194,51 @@
       "name": "Mateo",
       "grad_date": "2024",
       "flag": "Spain"
+    },
+    {
+      "name": "Ben",
+      "grad_date": "2027",
+      "flag": "Canada"
+    },
+    {
+      "name": "William",
+      "grad_date": "2028",
+      "flag": "Vietnam"
+    },
+    {
+      "name": "Katelyn",
+      "grad_date": "2028",
+      "flag": "Vietnam"
+    },
+    {
+      "name": "Bella",
+      "grad_date": "2028",
+      "flag": "China"
+    },
+    {
+      "name": "Jasith",
+      "grad_date": "2028",
+      "flag": "India"
+    },
+    {
+      "name": "Veronica",
+      "grad_date": "2028",
+      "flag": "India"
+    },
+    {
+      "name": "Shaan",
+      "grad_date": "2028",
+      "flag": "India"
+    },
+    {
+      "name": "Abhi",
+      "grad_date": "2028",
+      "flag": "India"
+    },
+    {
+      "name": "Ananya",
+      "grad_date": "2028",
+      "flag": "India"
     }
   ]
 }

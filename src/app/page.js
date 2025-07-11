@@ -176,7 +176,8 @@ export default function Home() {
     "Philippines": "&#127477;&#127469;",
     "Netherlands": "&#127475;&#127473;",
     "Vietnam": "&#127483;&#127475;",
-    "Spain": "&#127466;&#127480;"
+    "Spain": "&#127466;&#127480;",
+    "Canada": "	&#x1f1e8;&#x1f1e6;"
 };
 
 
